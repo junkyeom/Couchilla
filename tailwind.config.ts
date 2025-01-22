@@ -11,8 +11,12 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        'custom-color': '#f7a7bb'
+        'custom-pink': '#f7a7bb'
       },
+      fontFamily: {
+        noto: ['Noto Sans KR', 'sans-serif'],
+        anton: ['Anton']
+      }
     },
   },
   plugins: [],

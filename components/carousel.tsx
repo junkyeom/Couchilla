@@ -12,10 +12,11 @@ export default function Carousel() {
         <Swiper
           spaceBetween={10}
           slidesPerView={1}
-          pagination={{ clickable: true}}
+          pagination={{ 
+              clickable: true}}
           loop={true}
           autoplay={{
-            delay: 10000,
+            delay: 15000,
             disableOnInteraction: false, 
           }}
           modules={[Navigation, Pagination, Autoplay]}
@@ -39,7 +40,7 @@ export default function Carousel() {
           <SwiperSlide className="relative">
             <div className='relative w-full h-full'>
                 <Image
-                    src="/crsl/crsl-2.png"
+                    src="/crsl/crsl-2.jpg"
                     alt="Slide 1"
                     fill
                     className='object-cover'
@@ -47,10 +48,10 @@ export default function Carousel() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-transparent"></div>
             <div className="absolute bottom-0 left-0 mb-4 ml-8 transform text-white text-xl font-bold">
-              <p>슬라이드 2 텍스트</p>
+              <p>Damons year - [정규 1집] HEADACHE</p>
             </div>
             </div>
-          </SwiperSlide>
+          </SwiperSlide> 
           <SwiperSlide className="relative">
             <div className='relative w-full h-full'>
                 <Image
@@ -62,7 +63,7 @@ export default function Carousel() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-transparent"></div>
             <div className="absolute bottom-0 left-0 mb-4 ml-8 transform text-white text-xl font-bold">
-              <p>캐러셀 3</p>
+              <p>The Quiett - [정규 9집] glow forever</p>
             </div>
             </div>
           </SwiperSlide>
