@@ -17,7 +17,7 @@ export default function RootLayout({
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"/>
       </head>
-      <body className="bg-black h-[1000px]">
+      <body className="bg-black h-[2000px]">
       <Navbar/>
         {children}
       </body>
