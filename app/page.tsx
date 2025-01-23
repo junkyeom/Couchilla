@@ -15,6 +15,14 @@ export default function Home() {
             추운 겨울, 따뜻한 R&B
           </p>
         </div>
+        <div className="m-8 mt-32">
+          <p className="text-2xl text-white font-anton">
+            Explore by Genre
+          </p>
+          <p className="text-3xl text-custom-pink font-bold font-noto mt-2">
+            장르별 모아보기
+          </p>
+        </div>
       </div>
     </div>
   );
