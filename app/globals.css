@@ -24,3 +24,7 @@ body {
   background-color: #f7afbb;
   margin: 0 10px;
 }
+
+.swiper .swiper-button-prev, .swiper .swiper-button-next {
+  color: #f7afbb;
+}
