@@ -17,8 +17,13 @@ export default function SeasonCarousel() {
     >
       <SwiperSlide>
         <div className="aspect-[1/1]" >
-            <div className="w-full h-full relative">
-                <Image src="/thumb/blonde.png" alt="blonde" fill/>
+            <div className="w-full h-full relative group overflow-hidden">
+                <Image
+                    src="/thumb/blonde.png" 
+                    alt="blonde" 
+                    fill
+                    className="transition-transform duration-100 transform group-hover:scale-110"
+                />
             </div>
             <div className="text-center mt-4 font-noto">
                 <p className="text-white text-xl line-clamp-2">
@@ -37,8 +42,13 @@ export default function SeasonCarousel() {
       </SwiperSlide>
       <SwiperSlide>
       <div className="aspect-[1/1]" >
-            <div className="w-full h-full relative">
-                <Image src="/thumb/sos.png" alt="blonde" fill/>
+            <div className="w-full h-full relative group overflow-hidden">
+                <Image 
+                    src="/thumb/sos.png" 
+                    alt="blonde" 
+                    fill
+                    className="transition-transform duration-100 transform group-hover:scale-110"
+                />
             </div>
             <div className="text-center mt-4 font-noto">
                 <p className="text-white text-xl line-clamp-2">
@@ -57,8 +67,13 @@ export default function SeasonCarousel() {
       </SwiperSlide>
       <SwiperSlide>
       <div className="aspect-[1/1]" >
-            <div className="w-full h-full relative">
-                <Image src="/thumb/freudian.png" alt="blonde" fill/>
+            <div className="w-full h-full relative group overflow-hidden">
+                <Image 
+                    src="/thumb/freudian.png" 
+                    alt="blonde" 
+                    fill
+                    className="transition-transform duration-100 transform group-hover:scale-110"
+                />
             </div>
             <div className="text-center mt-4 font-noto">
                 <p className="text-white text-xl line-clamp-2">
@@ -77,8 +92,13 @@ export default function SeasonCarousel() {
       </SwiperSlide>
       <SwiperSlide>
       <div className="aspect-[1/1]" >
-            <div className="w-full h-full relative">
-                <Image src="/thumb/gabriel.png" alt="blonde" fill/>
+            <div className="w-full h-full relative group overflow-hidden">
+                <Image 
+                    src="/thumb/gabriel.png" 
+                    alt="blonde" 
+                    fill
+                    className="transition-transform duration-100 transform group-hover:scale-110"
+                />
             </div>
             <div className="text-center mt-4 font-noto">
                 <p className="text-white text-xl line-clamp-2">
@@ -97,8 +117,13 @@ export default function SeasonCarousel() {
       </SwiperSlide>
       <SwiperSlide>
       <div className="aspect-[1/1]" >
-            <div className="w-full h-full relative">
-                <Image src="/thumb/orange.png" alt="blonde" fill/>
+            <div className="w-full h-full relative group overflow-hidden">
+                <Image 
+                    src="/thumb/orange.png" 
+                    alt="blonde" 
+                    fill
+                    className="transition-transform duration-100 transform group-hover:scale-110"
+                />
             </div>
             <div className="text-center mt-4 font-noto">
                 <p className="text-white text-xl line-clamp-2">

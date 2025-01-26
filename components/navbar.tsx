@@ -29,12 +29,12 @@ export default function Navbar() {
                 <Link href="/"><Image src="/logo.png" alt="couchilla" fill></Image></Link>
             </div>
             <div className="text-custom-pink font-anton text-xl">
-                <Link href="/" className="mr-5">LP/CD</Link>
-                <Link href="/" className="mr-5">GOODS</Link>
-                <Link href="/" className="mr-5">EVENT</Link>
+                <Link href="/" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">LP/CD</Link>
+                <Link href="/" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">GOODS</Link>
+                <Link href="/" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">EVENT</Link>
             </div>
             <div className="text-custom-pink font-anton text-xl ml-auto">
-                <Link href="/" className="mr-5">LOGIN</Link>
+                <Link href="/" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">LOGIN</Link>
             </div>
         </div>
     )

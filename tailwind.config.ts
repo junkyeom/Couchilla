@@ -11,7 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        'custom-pink': '#f7a7bb'
+        'custom-pink': '#f7a7bb',
+        'custom-dark-pink': '#ff69b4',
       },
       fontFamily: {
         noto: ['Noto Sans KR', 'sans-serif'],
