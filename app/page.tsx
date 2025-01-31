@@ -3,6 +3,8 @@
 import SeasonCarousel from "@/components/carousels/season-carousel";
 import Carousel from "@/components/main-carousel";
 import Test from "@/components/test";
+import Detail from "./detail/[id]/page";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -30,7 +32,7 @@ export default function Home() {
             <p className="text-3xl text-custom-pink font-bold font-noto mt-2">
               장르별 모아보기
             </p>
-            <Test/>
+            <Link href={'/detail/4'} className="bg-white">ㅎㅇ</Link>
           </div>
         </div>
       </div>

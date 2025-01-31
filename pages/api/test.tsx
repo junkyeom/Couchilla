@@ -6,11 +6,17 @@ const prisma = new PrismaClient()
 export default async function handler(req:NextApiRequest, res:NextApiResponse) {
 
     if(req.method === "GET") {
+        console.log("api 응답")
         const data = await prisma.card.findUnique({
             where: {
               id : 4
-            }
+            } 
           })
-          return res.status(200).json(data?.image_url)
+
+          const formattedData = {
+            ...data,
+            id: data?.id.toString(),
+          };
+          return res.status(200).json(formattedData)
     }
 }
