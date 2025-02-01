@@ -1,7 +1,7 @@
 'use client'
 
 import SeasonCarousel from "@/components/carousels/season-carousel";
-import Carousel from "@/components/main-carousel";
+import Carousel from "@/components/carousels/main-carousel";
 import Test from "@/components/test";
 import Detail from "./detail/[id]/page";
 import Link from "next/link";

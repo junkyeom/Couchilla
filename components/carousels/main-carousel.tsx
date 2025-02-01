@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Carousel() {
     return (
@@ -38,8 +39,8 @@ export default function Carousel() {
             </div>
           </SwiperSlide>
           <SwiperSlide className="relative">
-            <div className='relative w-full h-full'>
-                <Image
+            <Link href="/detail/4"><div className='relative w-full h-full'>
+              <Image
                     src="/crsl/crsl-2.jpg"
                     alt="Slide 1"
                     fill
@@ -51,9 +52,10 @@ export default function Carousel() {
               <p>Damons year - [정규 1집] HEADACHE</p>
             </div>
             </div>
+            </Link>
           </SwiperSlide> 
           <SwiperSlide className="relative">
-            <div className='relative w-full h-full'>
+            <Link href="/detail/5"><div className='relative w-full h-full'>
                 <Image
                     src="/crsl/crsl-3.jpg"
                     alt="Slide 1"
@@ -66,6 +68,7 @@ export default function Carousel() {
               <p>The Quiett - [정규 9집] glow forever</p>
             </div>
             </div>
+            </Link>
           </SwiperSlide>
         </Swiper>
       );
