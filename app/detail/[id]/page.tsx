@@ -22,7 +22,7 @@ export default async function Detail(props:any) {
                 </div>
                 <div className="w-1/2 pl-8 border-l border-[#f0f0f0]">
                     <div className="pb-3 border-b border-[#f0f0f0]">
-                        <div className="text-2xl font-semibold">{result?.title}</div>
+                        <div className="text-2xl font-semibold mb-1">{result?.title}</div>
                         <div className="text-[#f0f0f0]">{result?.artist}</div>
                     </div>
                     <div className="pt-5">

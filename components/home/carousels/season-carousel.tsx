@@ -26,14 +26,14 @@ export default function SeasonCarousel() {
                 />
             </div>
             <div className="text-center mt-4 font-noto">
-                <p className="text-white text-xl line-clamp-2">
+                <p className="text-white text-lg line-clamp-2">
                     Frank Ocean - Blonde (2023)
                 </p>
                 <div className="mt-4">
-                    <p className="text-white text-lg">
+                    <p className="text-white">
                         구매가
                     </p>
-                    <p className="text-white text-lg">
+                    <p className="text-white">
                         250,000원
                     </p>
                 </div>
@@ -51,14 +51,14 @@ export default function SeasonCarousel() {
                 />
             </div>
             <div className="text-center mt-4 font-noto">
-                <p className="text-white text-xl line-clamp-2">
+                <p className="text-white text-lg line-clamp-2">
                     SZA - SOS
                 </p>
                 <div className="mt-4">
-                    <p className="text-white text-lg">
+                    <p className="text-white">
                         구매가
                     </p>
-                    <p className="text-white text-lg">
+                    <p className="text-white">
                         320,000원
                     </p>
                 </div>
@@ -76,14 +76,14 @@ export default function SeasonCarousel() {
                 />
             </div>
             <div className="text-center mt-4 font-noto">
-                <p className="text-white text-xl line-clamp-2">
+                <p className="text-white text-lg line-clamp-2">
                     Daniel Caesar - Fredian (Blue)
                 </p>
                 <div className="mt-4">
                     <p className="text-white ">
                         구매가
                     </p>
-                    <p className="text-white text-lg">
+                    <p className="text-white">
                         117,200원
                     </p>
                 </div>
@@ -101,14 +101,14 @@ export default function SeasonCarousel() {
                 />
             </div>
             <div className="text-center mt-4 font-noto">
-                <p className="text-white text-xl line-clamp-2">
+                <p className="text-white text-lg line-clamp-2">
                     Keshi - Gabriel (Red Translucent)
                 </p>
                 <div className="mt-4">
-                    <p className="text-white text-lg">
+                    <p className="text-white">
                         구매가
                     </p>
-                    <p className="text-white text-lg">
+                    <p className="text-white">
                         55,000원
                     </p>
                 </div>
@@ -126,14 +126,14 @@ export default function SeasonCarousel() {
                 />
             </div>
             <div className="text-center mt-4 font-noto">
-                <p className="text-white text-xl line-clamp-2">
+                <p className="text-white text-lg line-clamp-2">
                     Emotional Oranges - The Juice Vol. 2
                 </p>
                 <div className="mt-4">
-                    <p className="text-white text-lg">
+                    <p className="text-white">
                         구매가
                     </p>
-                    <p className="text-white text-lg">
+                    <p className="text-white">
                         60,000원
                     </p>
                 </div>

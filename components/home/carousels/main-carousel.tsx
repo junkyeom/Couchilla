@@ -24,7 +24,7 @@ export default function Carousel() {
           className="relative w-full h-[600px] top-4"
         >
           <SwiperSlide className="relative">
-            <div className='relative w-full h-full'>
+            <Link href="/detail/6"><div className='relative w-full h-full'>
                 <Image
                 src="/crsl/crsl-1.jpg"
                 alt="Slide 1"
@@ -37,6 +37,7 @@ export default function Carousel() {
               <p>Free Hukky Shibaseki & the God Sun Symphony Group : Odyssey.1</p>
             </div>
             </div>
+            </Link>
           </SwiperSlide>
           <SwiperSlide className="relative">
             <Link href="/detail/4"><div className='relative w-full h-full'>
