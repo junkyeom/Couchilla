@@ -3,15 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation"; // ✅ 현재 경로 확인
+import { usePathname } from "next/navigation"; 
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(true);
-    const pathname = usePathname(); // ✅ 현재 URL 가져오기
-    const isHome = pathname === "/"; // ✅ 홈 화면인지 확인
+    const pathname = usePathname(); 
+    const isHome = pathname === "/"; 
 
     useEffect(() => {
-        if (!isHome) return; // ✅ detail 페이지에서는 스크롤 이벤트 X
+        if (!isHome) return; 
 
         const handleScroll = () => {
             setScrolled(window.scrollY < 450);
@@ -24,8 +24,7 @@ export default function Navbar() {
     return (
         <div
             className={`flex z-50 w-full items-center px-5 py-4 transition-all duration-300 fixed
-
-            ${scrolled ? "bg-transparent" : "bg-black"}`}
+            ${isHome&&scrolled ? "bg-transparent" : "bg-black"} `}
         >
             <div className="w-[160px] h-[64px] relative mr-10">
                 <Link href="/"><Image src="/logo.png" alt="couchilla" fill /></Link>
