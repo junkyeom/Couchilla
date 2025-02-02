@@ -23,7 +23,7 @@ export default function RootLayout({
             rel="stylesheet"
           />
       </head>
-      <body className="bg-black h-[2000px]">
+      <body className="bg-black h-[2500px]">
       <Navbar/>
         {children}
       </body>

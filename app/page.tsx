@@ -2,8 +2,6 @@
 
 import SeasonCarousel from "@/components/home/carousels/season-carousel";
 import Carousel from "@/components/home/carousels/main-carousel";
-import Test from "@/components/test";
-import Detail from "./detail/[id]/page";
 import Link from "next/link";
 import ByGenre from "@/components/home/by-genre";
 
