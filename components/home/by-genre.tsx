@@ -5,6 +5,7 @@ export default function ByGenre() {
 
     return(
         <div className="grid grid-cols-7 grid-rows-2 gap-6">
+            <Link href="/search/인디">
             <div>
                 <Image
                     src="/genre/team_baby.jpg"
@@ -17,6 +18,8 @@ export default function ByGenre() {
                     인디
                 </div>
             </div>
+            </Link>
+            <Link href="/search/알앤비">
             <div>
                 <Image
                     src="/genre/oohyo.jpg"
@@ -29,6 +32,8 @@ export default function ByGenre() {
                     알앤비
                 </div>
             </div>
+            </Link>
+            <Link href="/search/rnb">
             <div>
                 <Image
                     src="/genre/sos_genre.png"
@@ -41,6 +46,8 @@ export default function ByGenre() {
                     R&B/Soul
                 </div>
             </div>
+            </Link>
+            <Link href="/search/팝댄스">
             <div>
                 <Image
                     src="/genre/get_up.png"
@@ -53,6 +60,8 @@ export default function ByGenre() {
                     팝/댄스
                 </div>
             </div>
+            </Link>
+            <Link href="/search/pop">
             <div>
                 <Image
                     src="/genre/divide.png"
@@ -65,6 +74,8 @@ export default function ByGenre() {
                     POP
                 </div>
             </div>
+            </Link>
+            <Link href="/search/록메탈">
             <div>
                 <Image
                     src="/genre/no_pain.png"
@@ -77,6 +88,8 @@ export default function ByGenre() {
                     록/메탈
                 </div>
             </div>
+            </Link>
+            <Link href="/search/rockmetal">
             <div>
                 <Image
                     src="/genre/nevermind.png"
@@ -89,6 +102,8 @@ export default function ByGenre() {
                     Rock/Metal
                 </div>
             </div>
+            </Link>
+            <Link href="/search/발라드">
             <div>
                 <Image
                     src="/genre/love_yerin.png"
@@ -100,7 +115,10 @@ export default function ByGenre() {
                 <div className="text-sm text-gray-400 text-center mt-2">
                     발라드
                 </div>
-            </div><div>
+            </div>
+            </Link>
+            <Link href="/search/포크%2F어쿠스틱">
+            <div>
                 <Image
                     src="/genre/love_lee.png"
                     alt="Example"
@@ -111,7 +129,10 @@ export default function ByGenre() {
                 <div className="text-sm text-gray-400 text-center mt-2">
                     포크/어쿠스틱
                 </div>
-            </div><div>
+            </div>
+            </Link>
+            <Link href="/search/재즈%2F클래식">
+            <div>
                 <Image
                     src="/genre/chopin.jpg"
                     alt="Example"
@@ -123,6 +144,8 @@ export default function ByGenre() {
                     재즈/클래식
                 </div>
             </div>
+            </Link>
+            <Link href="/search/힙합">
             <div>
                 <Image
                     src="/genre/freethebeast.png"
@@ -135,6 +158,8 @@ export default function ByGenre() {
                     힙합
                 </div>
             </div>
+            </Link>
+            <Link href="/search/hiphop">
             <div>
                 <Image
                     src="/genre/mbdtf.jpg"
@@ -147,6 +172,8 @@ export default function ByGenre() {
                     Hip-Hop
                 </div>
             </div>
+            </Link>
+            <Link href="/search/emo">
             <div>
                 <Image
                     src="/genre/keung.jpg"
@@ -159,6 +186,8 @@ export default function ByGenre() {
                     EMO
                 </div>
             </div>
+            </Link>
+            <Link href="/search/jpop">
             <div>
                 <Image
                     src="/genre/szme.png"
@@ -171,6 +200,7 @@ export default function ByGenre() {
                     J-Pop
                 </div>
             </div>
+            </Link>
         </div>
     )
 }

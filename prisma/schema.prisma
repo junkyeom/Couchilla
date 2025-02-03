@@ -22,4 +22,5 @@ model Card {
   release_date    DateTime? @db.Date
   country         String?
   release_company String?
+  tag             String?
 }
