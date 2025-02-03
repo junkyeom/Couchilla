@@ -9,15 +9,17 @@ datasource db {
 }
 
 model Card {
-  id           BigInt    @id(map: "card_pkey") @default(autoincrement())
-  title        String?
-  artist       String?
-  type         String?
-  genre        String?
-  condition    String?
-  description  String?
-  price        Int?
-  created_at   DateTime  @default(now()) @db.Timestamptz(6)
-  image_url    String?
-  release_date DateTime? @db.Date
+  id              BigInt    @id(map: "card_pkey") @default(autoincrement())
+  title           String?
+  artist          String?
+  type            String?
+  genre           String?
+  condition       String?
+  description     String?
+  price           Int?
+  created_at      DateTime  @default(now()) @db.Timestamptz(6)
+  image_url       String?
+  release_date    DateTime? @db.Date
+  country         String?
+  release_company String?
 }

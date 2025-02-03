@@ -1,5 +1,3 @@
-'use client'
-
 import SeasonCarousel from "@/components/home/carousels/season-carousel";
 import Carousel from "@/components/home/carousels/main-carousel";
 import Link from "next/link";
