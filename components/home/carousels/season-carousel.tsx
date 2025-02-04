@@ -42,7 +42,7 @@ export default function SeasonCarousel() {
                         src={result.image_url} 
                         alt={result.title}
                         fill
-                        className="transition-transform duration-100 transform group-hover:scale-110"
+                        className="transition-transform duration-100 transform group-hover:scale-110 rounded-lg"
                     />
                 </div>
                 <div className="text-center mt-4 font-noto">

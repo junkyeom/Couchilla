@@ -1,12 +1,11 @@
 import { PrismaClient } from "@prisma/client"
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react"
 
 let prisma = new PrismaClient();
 
 export default async function Search(props:any) {
-    
+
     let tag = decodeURIComponent(props.params.tag);
     let result = await prisma.card.findMany({
         where: {
@@ -19,6 +18,7 @@ export default async function Search(props:any) {
     });
 
     return (
+        <>
         <div className="relative top-32 w-3/4 mx-auto">
             <div className="text-white text-center mb-16 text-2xl">
                 <span className="text-custom-pink font-bold">{tag}</span>에 대한 검색결과 입니다.
@@ -40,7 +40,7 @@ export default async function Search(props:any) {
                     </div>
                     <div className="text-center mt-4 font-noto">
                         <p className="text-white text-lg h-14 line-clamp-2">
-                            {a.artist.split("(")[0]} - {a.title}
+                            {a.artist.split("(")[0]} - {a.title} {a.edition ? <span>({a.edition})</span> : null}
                         </p>
                         <div className="mt-4">
                             <p className="text-gray-400 text-sm">
@@ -56,5 +56,6 @@ export default async function Search(props:any) {
             )) : <div className="text-white">검색결과가 없습니다</div>}
         </div>
     </div>
+    </>
     )
 }

@@ -11,7 +11,9 @@ export default async function Detail(props:any) {
             id : BigInt(id)
         }
     })
+
     return (
+        <>
         <div className="relative top-32 text-custom-white w-3/4 mx-auto"> 
             <div className="flex w-full justify-between">
                 <div className="w-[48%] mr-8 box-border">
@@ -80,5 +82,6 @@ export default async function Detail(props:any) {
                 </div>
             </div>
         </div>
+        </>
     )
 }
