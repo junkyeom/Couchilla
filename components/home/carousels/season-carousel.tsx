@@ -47,7 +47,8 @@ export default function SeasonCarousel() {
                 </div>
                 <div className="text-center mt-4 font-noto">
                     <p className="text-white text-lg line-clamp-2">
-                        {result.artist.split("(")[0]} - {result.title}
+                        {result.artist.split("(")[0]} - {result.title} 
+                        {result.edition ? <span> ({result.edition})</span> : null}
                     </p>
                     <div className="mt-4">
                         <p className="text-gray-400 text-sm">

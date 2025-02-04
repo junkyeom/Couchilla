@@ -187,7 +187,7 @@ export default function ByGenre() {
                 </div>
             </div>
             </Link>
-            <Link href="/search/jpop">
+            <Link href="/search/jp">
             <div>
                 <Image
                     src="/genre/szme.png"

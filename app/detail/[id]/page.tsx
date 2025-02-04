@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client"
 import Image from "next/image"
+import Recommand from "./recommand"
 
 let prisma = new PrismaClient()
 
@@ -13,9 +14,8 @@ export default async function Detail(props:any) {
     })
 
     return (
-        <>
         <div className="relative top-32 text-custom-white w-3/4 mx-auto"> 
-            <div className="flex w-full justify-between">
+            <div className="flex w-full justify-between mb-12">
                 <div className="w-[48%] mr-8 box-border">
                     <div className="relative w-full aspect-square">
                         {result?.image_url ? <Image src={result?.image_url} alt="커버 이미지" className="rounded-lg" fill/> : <p>이미지가 없습니다</p>}
@@ -60,8 +60,8 @@ export default async function Detail(props:any) {
                         </ul>
                         <ul className="w-full">
                             <li className="flex justify-between w-full mb-3">
-                                <div className="text-custom-white font-light">추가정보</div>
-                                <div className="font-light">{result?.description}</div>
+                                <div className="text-custom-white font-light w-[300px]">추가정보</div>
+                                <div className="font-light justify-end">{result?.description}</div>
                             </li>
                         </ul>
                         <ul className="w-full">
@@ -81,7 +81,9 @@ export default async function Detail(props:any) {
                     </div>
                 </div>
             </div>
+            <div>
+                <Recommand tag={result?.tag} currentId={result?.id}/>
+            </div>
         </div>
-        </>
     )
 }
