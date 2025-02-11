@@ -1,27 +1,40 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from "@supabase/supabase-js";
 import { NextApiRequest, NextApiResponse } from "next";
 
-let supabase = createClient('https://urlzhmxlxhdtqzdxreku.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVybHpobXhseGhkdHF6ZHhyZWt1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc5MDMxMzEsImV4cCI6MjA1MzQ3OTEzMX0.b6n0oraUbcTN_XNDRzhirB7eLvjDCMklrbEh48B_yvA')
-
 export default async function handler(req:NextApiRequest, res:NextApiResponse) {
-
-    if (req.method !== "POST") {
-        return res.status(405).json({ message: "Method Not Allowed" });
-    }
-
-    const { email , password } = req.body;
-
-    const { data, error } = await supabase.auth.signUp({
-        email,
-        password
-    })
-
-    console.log(data)
-
-    if (error) {
-        return res.status(400).json({ message: "Sign Up failed", error: error.message });
-      }
     
-      return res.status(200).json({ message: "User created successfully", data });
+    let supabaseUrl = process.env.SUPABASE_URL;
+    let supabaseKey = process.env.SUPABASE_KEY;
+    
+    if (!supabaseUrl || !supabaseKey) {
+        throw new Error("Supabase URL or key is missing. Please check your .env.local file.");
+      }
+      
+    let supabase = createClient(supabaseUrl, supabaseKey);
 
+    if(req.method === "POST") {
+        const { email, password } = req.body;
+
+        // 이메일과 비밀번호가 없으면 오류 반환
+        if (!email || !password) {
+        return res.status(400).json({ message: "Email and password are required" });
+        }
+
+        // 회원가입 처리
+        const { data, error } = await supabase.auth.signUp({
+            email,
+            password,
+        });
+
+        if (error) {
+        return res.status(400).json({ message: error.message, cause: error.cause });
+        }
+
+        // 성공적으로 회원가입된 경우
+        return res.status(200).json({ message: "User registered successfully", data});
+    } else {
+        // POST 요청 외의 요청에 대해 405 Method Not Allowed 응답
+        return res.status(405).json({ message: "Method Not Allowed" });
+        }
+        
 }

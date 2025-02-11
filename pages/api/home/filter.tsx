@@ -5,12 +5,13 @@ let prisma = new PrismaClient()
 
 export default async function handler(req:NextApiRequest, res:NextApiResponse) {
 
-    if(req.method === "GET") {
+    if(req.method === "POST") {
         let data:any[] =[];
-        
-        console.log(req.body)
+        let type = req.body?.type
 
-        if(req.body == "genre") {
+        console.log("타입 : "+type)
+
+        if(type == "genre") {
             data = await prisma.card.findMany({
                 where : {
                     genre : {
@@ -18,8 +19,9 @@ export default async function handler(req:NextApiRequest, res:NextApiResponse) {
                         mode : "insensitive",
                     }
                 }
-            })
-        } else if(req.body == "artist") {
+            }) || []
+        } 
+        else if(type == "artist") {
             data = await prisma.card.findMany({
                 where : {
                     artist : {
@@ -27,14 +29,19 @@ export default async function handler(req:NextApiRequest, res:NextApiResponse) {
                         mode : "insensitive",
                     }
                 }
-            })
+            }) || []
+        } else if(type == "type") {
+            data = await prisma.card.findMany({
+                where : {
+                    type : "GOODS"
+                }
+            }) || []
         }
         
         const normalizedData = data.map(item=>({
             ...item,
             id: item.id.toString(), // BigInt 필드에 대해서 toString() 사용
         }));
-        console.log(normalizedData)
         return res.status(200).json(normalizedData)
     }
 }

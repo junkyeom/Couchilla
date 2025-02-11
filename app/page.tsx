@@ -2,6 +2,7 @@ import HomeCarousel from "@/components/home/carousels/home-carousel";
 import Carousel from "@/components/home/carousels/main-carousel";
 import Link from "next/link";
 import ByGenre from "@/components/home/by-genre";
+import GridCarousel from "@/components/home/carousels/grid-carousel";
 
 export default function Home() {
   return (
@@ -41,7 +42,7 @@ export default function Home() {
               음악을 담은 굿즈
             </p>
             <div className="mt-6">
-              <HomeCarousel filter="artist"/>
+              <GridCarousel/>
             </div>
           </div>
           <div className="mt-24">
@@ -52,7 +53,7 @@ export default function Home() {
               검정치마
             </p>
             <div className="mt-6">
-              <HomeCarousel/>
+              <HomeCarousel filter="artist"/>
             </div>
           </div>
         </div>
