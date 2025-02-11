@@ -5,17 +5,23 @@ let supabase = createClient('https://urlzhmxlxhdtqzdxreku.supabase.co', 'eyJhbGc
 
 export default async function handler(req:NextApiRequest, res:NextApiResponse) {
 
+    if (req.method !== "POST") {
+        return res.status(405).json({ message: "Method Not Allowed" });
+    }
+
+    const { email , password } = req.body;
+
     const { data, error } = await supabase.auth.signUp({
-        email: 'example@email.com',
-        password: 'example-password',
+        email,
+        password
     })
+
     console.log(data)
 
     if (error) {
-        console.log("Sign Up Error: ", error.message); // 에러 메시지를 콘솔로 출력
         return res.status(400).json({ message: "Sign Up failed", error: error.message });
-    }
-
-    return res.status(200).json('합격')
+      }
+    
+      return res.status(200).json({ message: "User created successfully", data });
 
 }

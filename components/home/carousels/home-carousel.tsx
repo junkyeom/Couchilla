@@ -9,12 +9,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-export default function SeasonCarousel() {
+export default function HomeCarousel({ filter } : any) {
 
     let [seasonVal, setSeasonVal] = useState<any>(null);
 
     useEffect(()=>{
-        fetch('/api/home/season',{method : "GET", headers : { 'Cache-Control': 'no-cache'}})
+        fetch('/api/home/season',{method : "POST", headers : { 'Cache-Control': 'no-cache'}, body : filter})
         .then(r=>r.json())
         .then(r=>{
             if(r) {

@@ -1,4 +1,4 @@
-import SeasonCarousel from "@/components/home/carousels/season-carousel";
+import HomeCarousel from "@/components/home/carousels/home-carousel";
 import Carousel from "@/components/home/carousels/main-carousel";
 import Link from "next/link";
 import ByGenre from "@/components/home/by-genre";
@@ -10,8 +10,8 @@ export default function Home() {
         <Carousel/>
       </div>
       <div className="flex justify-center">
-        <div className="w-4/5 mt-4">
-          <div className="mt-24">
+        <div className="w-4/5 mt-28">
+          <div>
             <p className="text-xl text-white font-anton">
               Winter Vibes: Cozy R&B
             </p>
@@ -19,7 +19,7 @@ export default function Home() {
               추운 겨울, 따뜻한 R&B
             </p>
             <div className="mt-6">
-              <SeasonCarousel/>
+              <HomeCarousel filter="genre"/>
             </div>
           </div>
           <div className="mt-24">
@@ -31,6 +31,28 @@ export default function Home() {
             </p>
             <div className="mt-6">
               <ByGenre/>
+            </div>
+          </div>
+          <div className="mt-24">
+            <p className="text-xl text-white font-anton">
+              Goods
+            </p>
+            <p className="text-2xl text-custom-pink font-bold font-noto mt-1">
+              음악을 담은 굿즈
+            </p>
+            <div className="mt-6">
+              <HomeCarousel filter="artist"/>
+            </div>
+          </div>
+          <div className="mt-24">
+            <p className="text-xl text-white font-anton">
+              The Black Skirts
+            </p>
+            <p className="text-2xl text-custom-pink font-bold font-noto mt-1">
+              검정치마
+            </p>
+            <div className="mt-6">
+              <HomeCarousel/>
             </div>
           </div>
         </div>
