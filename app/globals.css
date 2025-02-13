@@ -25,6 +25,21 @@ body {
   margin: 0 10px;
 }
 
-.swiper .swiper-button-prev, .swiper .swiper-button-next {
+.swiper-button-prev::after, 
+.swiper-button-next::after{
   color: #f7afbb;
+  transition: all 0.25s ease-in-out;
+}
+
+.swiper-button-prev:hover::after, 
+.swiper-button-next:hover::after{
+  color: #ff69b4;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 500,
+  'GRAD' 0,
+  'opsz' 24
 }

@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import { Navigation, Autoplay } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function HomeCarousel({ filter } : any) {
 
@@ -35,9 +35,9 @@ export default function HomeCarousel({ filter } : any) {
       modules={[Navigation, Autoplay]}
       spaceBetween={60}
       slidesPerView={4} 
-      navigation 
-      loop={true} 
-      autoplay={{ delay: 3000, disableOnInteraction: false }}
+      loop={true}
+      autoplay={{ delay: 3000 , disableOnInteraction: false }}
+      navigation
     >
         {
         filterVal && filterVal.length > 0 ? (filterVal.map((result:any)=>(
@@ -57,7 +57,7 @@ export default function HomeCarousel({ filter } : any) {
                 <div className="text-center mt-4 font-noto">
                     <p className="text-white text-lg h-14 line-clamp-2">
                         {result.artist.split("(")[0]} - {result.title} 
-                        {result.edition ? <span> ({result.edition})</span> : null}
+                        {result.edition ? <span>({result.edition})</span> : null}
                     </p>
                     <div className="mt-4">
                         <p className="text-gray-400 text-base">

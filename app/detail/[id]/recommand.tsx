@@ -26,7 +26,7 @@ export default async function Recommand({tag, currentId}:any) {
             <div className="grid grid-cols-4 gap-4">
             {result && result.length > 0 ? result.map((a:any,i:number)=>(
                 <Link href={"/detail/"+a.id} key={i}>
-                <div className="w-full h-[400px]">
+                <div className="w-full h-[425px]">
                     <div className="w-full aspect-square relative group overflow-hidden">
                         <Image
                             src={a.image_url || "/thumb/default_image.png"} 
@@ -40,10 +40,10 @@ export default async function Recommand({tag, currentId}:any) {
                             {a.artist.split("(")[0]} - {a.title} {a.edition ? <span>({a.edition})</span> : null}
                         </p>
                         <div className="mt-4">
-                            <p className="text-gray-400 text-sm">
+                            <p className="text-gray-400 text-base">
                                 구매가
                             </p>
-                            <p className="text-white">
+                            <p className="text-white text-lg">
                                 {a.price?.toLocaleString() || " - "}원
                             </p>
                         </div>

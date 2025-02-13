@@ -3,7 +3,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/grid';
-import 'swiper/css/pagination';
 import { Grid, Navigation } from "swiper/modules";
 import Link from 'next/link';
 import Image from 'next/image';
@@ -27,20 +26,20 @@ export default function GridCarousel({ filter } :any) {
             if(r) {
                 setfilterVal(r);
             }
-            console.log(r)
         })
     },[])
 
     return (
       <>
         <Swiper
+          modules={[Grid, Navigation]}
           slidesPerView={3}
           grid={{
             rows: 2,
             fill : 'row'
           }}
           spaceBetween={30}
-          modules={[Grid, Navigation]}
+          navigation
           className='mx-auto w-full h-full'
         >
           {
@@ -76,7 +75,7 @@ export default function GridCarousel({ filter } :any) {
             </Link>
           </SwiperSlide>
         )) 
-    ): (<div className="text-white text-center text-lg">앨범을 가져오는 중입니다...</div>)}
+    ): (<div className="text-white text-center text-lg">굿즈를 가져오는 중입니다...</div>)}
         </Swiper>
       </>
     );

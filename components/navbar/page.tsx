@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation"; 
+import SearchBar from "./searchBar";
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(true);
@@ -34,8 +35,11 @@ export default function Navbar() {
                 <Link href="/search/goods" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">GOODS</Link>
                 <Link href="/" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">EVENT</Link>
             </div>
-            <div className="text-custom-pink font-anton text-xl ml-auto">
-                <Link href="/" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">LOGIN</Link>
+            <div className="ml-auto flex items-center">
+                <SearchBar/>
+            </div>
+            <div className="text-custom-pink font-anton text-xl ml-4">
+                <Link href="/register" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">REGISTER</Link>
             </div>
         </div>
     );
