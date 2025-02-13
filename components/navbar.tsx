@@ -30,8 +30,8 @@ export default function Navbar() {
                 <Link href="/"><Image src="/logo.png" alt="couchilla" fill /></Link>
             </div>
             <div className="text-custom-pink font-anton text-xl">
-                <Link href="/" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">LP/CD</Link>
-                <Link href="/" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">GOODS</Link>
+                <Link href="/search/lp" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">VINYL</Link>
+                <Link href="/search/goods" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">GOODS</Link>
                 <Link href="/" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">EVENT</Link>
             </div>
             <div className="text-custom-pink font-anton text-xl ml-auto">

@@ -42,7 +42,7 @@ export default function Home() {
               음악을 담은 굿즈
             </p>
             <div className="mt-6">
-              <GridCarousel/>
+              <GridCarousel filter="type"/>
             </div>
           </div>
           <div className="mt-24">
