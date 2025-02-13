@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
-import { Grid ,Navigation, Autoplay } from "swiper/modules";
+import { Grid, Navigation } from "swiper/modules";
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
@@ -34,28 +34,32 @@ export default function GridCarousel({ filter } :any) {
     return (
       <>
         <Swiper
-          slidesPerView={5}
+          slidesPerView={3}
           grid={{
-            rows: 1,
+            rows: 2,
+            fill : 'row'
           }}
           spaceBetween={30}
-          modules={[Grid]}
+          modules={[Grid, Navigation]}
+          className='mx-auto w-full h-full'
         >
           {
         filterVal && filterVal.length > 0 ? (filterVal.map((result:any)=>(
-            <SwiperSlide key={result.id} className='h-full w-full'>
+            <SwiperSlide key={result.id}>
             <Link href={"/detail/"+result.id}>
-            <div className="aspect-[1/1]" >
-                <div className="w-full h-full relative group overflow-hidden">
-                    <Image
-                        src={result.image_url} 
-                        alt={result.title}
-                        fill
-                        className="transition-transform duration-100 transform group-hover:scale-110 rounded-lg"
-                    />
+            <div className='flex'>
+                <div className="w-2/5 aspect-[1/1]">
+                    <div className="w-full h-full relative group overflow-hidden">
+                        <Image
+                            src={result.image_url} 
+                            alt={result.title}
+                            fill
+                            className="transition-transform duration-100 transform group-hover:scale-110 rounded-lg"
+                        />
+                    </div>
                 </div>
-                <div className="text-center mt-4 font-noto">
-                    <p className="text-white text-lg line-clamp-2">
+                <div className="w-3/5 pl-4 mt-4 font-noto">
+                    <p className="text-white text-base h-15 line-clamp-2">
                         {result.artist.split("(")[0]} - {result.title} 
                         {result.edition ? <span> ({result.edition})</span> : null}
                     </p>
@@ -63,7 +67,7 @@ export default function GridCarousel({ filter } :any) {
                         <p className="text-gray-400 text-sm">
                             구매가
                         </p>
-                        <p className="text-white">
+                        <p className="text-white text-base">
                             {result.price.toLocaleString()}원
                         </p>
                     </div>
@@ -76,54 +80,4 @@ export default function GridCarousel({ filter } :any) {
         </Swiper>
       </>
     );
-
-    // return (
-    //   <>
-    //     <Swiper
-    //       slidesPerView={3}
-    //       grid={{
-    //         rows: 2,
-    //       }}
-    //       spaceBetween={30}
-    //       pagination={{
-    //         clickable: true,
-    //       }}
-    //       modules={[Grid, Navigation]}
-    //       className="mySwiper"
-    //     >
-    //       {
-    //     filterVal && filterVal.length > 0 ? (filterVal.map((result:any)=>(
-    //         <SwiperSlide key={result.id}>
-    //         <Link href={"/detail/"+result.id}>
-    //         <div className="aspect-[1/1]" >
-    //             <div className="w-full h-full relative group overflow-hidden">
-    //                 <Image
-    //                     src={result.image_url} 
-    //                     alt={result.title}
-    //                     fill
-    //                     className="transition-transform duration-100 transform group-hover:scale-110 rounded-lg"
-    //                 />
-    //             </div>
-    //             <div className="text-center mt-4 font-noto">
-    //                 <p className="text-white text-lg line-clamp-2">
-    //                     {result.artist.split("(")[0]} - {result.title} 
-    //                     {result.edition ? <span> ({result.edition})</span> : null}
-    //                 </p>
-    //                 <div className="mt-4">
-    //                     <p className="text-gray-400 text-sm">
-    //                         구매가
-    //                     </p>
-    //                     <p className="text-white">
-    //                         {result.price.toLocaleString()}원
-    //                     </p>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //         </Link>
-    //       </SwiperSlide>
-    //     )) 
-    // ): (<div className="text-white text-center text-lg">앨범을 가져오는 중입니다...</div>)}
-    //     </Swiper>
-    //   </>
-    // );
   }

@@ -43,25 +43,27 @@ export default function HomeCarousel({ filter } : any) {
         filterVal && filterVal.length > 0 ? (filterVal.map((result:any)=>(
             <SwiperSlide key={result.id}>
             <Link href={"/detail/"+result.id}>
-            <div className="aspect-[1/1]" >
-                <div className="w-full h-full relative group overflow-hidden">
-                    <Image
-                        src={result.image_url} 
-                        alt={result.title}
-                        fill
-                        className="transition-transform duration-100 transform group-hover:scale-110 rounded-lg"
-                    />
+            <div>
+                <div className="aspect-[1/1]" >
+                    <div className="w-full h-full relative group overflow-hidden">
+                        <Image
+                            src={result.image_url} 
+                            alt={result.title}
+                            fill
+                            className="transition-transform duration-100 transform group-hover:scale-110 rounded-lg"
+                        />
+                    </div>
                 </div>
                 <div className="text-center mt-4 font-noto">
-                    <p className="text-white text-lg line-clamp-2">
+                    <p className="text-white text-lg h-14 line-clamp-2">
                         {result.artist.split("(")[0]} - {result.title} 
                         {result.edition ? <span> ({result.edition})</span> : null}
                     </p>
                     <div className="mt-4">
-                        <p className="text-gray-400 text-sm">
+                        <p className="text-gray-400 text-base">
                             구매가
                         </p>
-                        <p className="text-white">
+                        <p className="text-white text-lg">
                             {result.price.toLocaleString()}원
                         </p>
                     </div>
