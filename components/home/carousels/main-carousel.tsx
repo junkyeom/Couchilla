@@ -31,8 +31,7 @@ export default function Carousel() {
                 fill
                 className='object-cover'
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black"></div>
             <div className="absolute bottom-0 left-0 mb-4 ml-8 transform text-white text-xl font-bold">
               <p>Free Hukky Shibaseki & the God Sun Symphony Group : Odyssey.1</p>
             </div>

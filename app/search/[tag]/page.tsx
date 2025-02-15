@@ -4,9 +4,10 @@ import Link from "next/link";
 
 let prisma = new PrismaClient();
 
-export default async function Search(props:any) {
+export default async function Search({ params }: { params: { tag: string } }) {
 
-    let tag = decodeURIComponent(props.params.tag);
+    let tag = decodeURIComponent(params.tag);
+
     let result = await prisma.card.findMany({
         where: {
             OR: [

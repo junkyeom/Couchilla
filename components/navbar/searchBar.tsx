@@ -2,13 +2,34 @@
 
 import { Dialog, Transition, DialogPanel } from "@headlessui/react";
 import { useRouter } from "next/navigation";
-import { useState, Fragment } from "react"
+import { useState, useEffect,Fragment } from "react"
 
 export default function SearchBar() {
 
     let [isOpen, setIsOpen] = useState(false);
     let [formData, setFormData] = useState('')
+    let [recentSearches, setRecentSearches] = useState<string[]>([]);
     let router = useRouter();
+
+    useEffect(() => {
+        let storedSearches = JSON.parse(localStorage.getItem("recentSearches") || "[]");
+        setRecentSearches(storedSearches);
+    }, []);
+
+    let saveSearchword = (word: string) => {
+        let updatedSearches = [word, ...recentSearches.filter(item=>item!==word)];
+        if (updatedSearches.length > 5) updatedSearches = updatedSearches.slice(0, 10); // 최근 5개만 저장
+        setRecentSearches(updatedSearches);
+        localStorage.setItem("recentSearches", JSON.stringify(updatedSearches));
+    };
+
+    let handleSubmit = (e:React.FormEvent) => {
+        e.preventDefault();
+        if (!formData.trim()) return;
+        router.push('/search/'+ encodeURIComponent(formData));
+        saveSearchword(formData);
+        setIsOpen(false)
+    }
 
     return (
         <>
@@ -24,11 +45,7 @@ export default function SearchBar() {
                         <DialogPanel className="flex justify-center w-full h-full p-6 bg-white">
                             <div className="w-2/5 justify-center">
                                 <div className="relative w-full mt-8">
-                                    <form onSubmit={(e:React.FormEvent) => {
-                                        e.preventDefault(); 
-                                        router.push('/search/'+ encodeURIComponent(formData));
-                                        setIsOpen(false)
-                                    }}>
+                                    <form onSubmit={handleSubmit}>
                                         <button type="submit">
                                             <span 
                                                 className="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-custom-pink hover:text-custom-dark-pink cursor-pointer"
@@ -40,13 +57,60 @@ export default function SearchBar() {
                                             type="text"
                                             placeholder="앨범명, 가수명 등"
                                             onChange={(e)=>{setFormData(e.target.value)}}
-                                            className="w-full px-10 py-2 text-lg border-2 border-custom-pink rounded-md focus:outline-none focus:ring-1 focus:ring-custom-pink"
+                                            className="w-full px-10 py-2 font-noto font-medium text-lg text-custom-dark-pink border-2 border-custom-pink rounded-md focus:outline-none focus:ring-1 focus:ring-custom-dark-pink"
                                         />
                                     </form>
+                                </div> 
+                                <div className="w-full mt-16">
+                                    <div className="flex">
+                                        <div className="text-sm">
+                                            최근 검색어
+                                        </div>
+                                        <span 
+                                            className="ml-auto text-sm cursor-pointer"
+                                            onClick={()=>{
+                                                localStorage.setItem("recentSearches", JSON.stringify([]));
+                                                setRecentSearches([]);
+                                            }}>
+                                            전체삭제
+                                        </span>
+                                    </div>
+                                    <div className="w-full">
+                                        {recentSearches.length > 0 ? (
+                                            <ul className="flex flex-wrap w-full mt-4">
+                                                {recentSearches.map((search, index) => (
+                                                    <li
+                                                        key={index}
+                                                        className="px-4 py-2 mr-4 mb-2 border border-gray-400 text-gray-400 rounded-full hover:bg-gray-100 cursor-pointer flex items-center"
+                                                        onClick={()=>{
+                                                            router.push("/search/"+search);
+                                                            saveSearchword(search);
+                                                            setIsOpen(false) 
+                                                        }}
+                                                    >
+                                                        {search}
+                                                        <span 
+                                                            className="ml-2 text-gray-700 text-xs material-symbols-outlined"
+                                                            onClick={(e)=>{
+                                                                e.stopPropagation();
+                                                                let updated = [...recentSearches]
+                                                                updated.splice(index, 1)
+                                                                setRecentSearches(updated)
+                                                            }}>
+                                                            close
+                                                        </span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        ) : <div className="flex justify-center items-center h-32 text-gray-500">
+                                                최근 검색어가 없습니다.
+                                            </div>}
+                                    </div>
                                 </div>
-                                <span 
-                                    className="absolute top-16 right-8 cursor-pointer" onClick={() => setIsOpen(false)}>
-                                    닫기
+                                <span
+                                    className="absolute top-14 right-8 cursor-pointer text-4xl text-custom-pink hover:text-custom-dark-pink material-symbols-outlined" 
+                                    onClick={() => setIsOpen(false)}>
+                                    close
                                 </span>
                             </div>
                             
@@ -55,23 +119,5 @@ export default function SearchBar() {
                 </Dialog>
             </Transition>
         </>
-        // <div>
-        //     <form onSubmit={handleSubmit} >
-        //         <div>
-        //             <input
-        //                 type="text"
-        //                 placeholder="앨범명, 가수명 등"
-        //                 onChange={(e)=>{setFormData(e.target.value)}}
-        //                 className="w-full px-4 py-1 pr-10 mt-1 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-custom-pink"
-        //             />
-        //         </div>
-        //         <button
-        //             type="submit"
-        //             className="absolute right-40 top-1/2 transform -translate-y-2.5 text-gray-500 hover:text-custom-pink"
-        //         >
-        //             <span className="material-symbols-outlined text-custom-pink hover:text-custom-dark-pink">search</span>
-        //         </button>
-        //     </form>
-        // </div>
        )
 }
