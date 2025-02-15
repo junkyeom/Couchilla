@@ -81,7 +81,7 @@ export default function SearchBar() {
                                                 {recentSearches.map((search, index) => (
                                                     <li
                                                         key={index}
-                                                        className="px-4 py-2 mr-4 mb-2 border border-gray-400 text-gray-400 rounded-full hover:bg-gray-100 cursor-pointer flex items-center"
+                                                        className="px-4 py-2 mr-4 mb-2 border border-custom-pink text-gray-400 rounded-full hover:bg-gray-100 cursor-pointer flex items-center"
                                                         onClick={()=>{
                                                             router.push("/search/"+search);
                                                             saveSearchword(search);
@@ -108,9 +108,8 @@ export default function SearchBar() {
                                     </div>
                                 </div>
                                 <span
-                                    className="absolute top-14 right-8 cursor-pointer text-4xl text-custom-pink hover:text-custom-dark-pink material-symbols-outlined" 
+                                    className="absolute top-14 right-8 cursor-pointer text-4xl text-custom-pink hover:text-custom-dark-pink bi bi-x-lg" 
                                     onClick={() => setIsOpen(false)}>
-                                    close
                                 </span>
                             </div>
                             

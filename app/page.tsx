@@ -1,6 +1,5 @@
 import HomeCarousel from "@/components/home/carousels/home-carousel";
 import Carousel from "@/components/home/carousels/main-carousel";
-import Link from "next/link";
 import ByGenre from "@/components/home/by-genre";
 import GridCarousel from "@/components/home/carousels/grid-carousel";
 
@@ -10,7 +9,7 @@ export default function Home() {
       <div>
         <Carousel/>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center fade-in">
         <div className="w-4/5 mt-28">
           <div>
             <p className="text-xl text-white font-anton">

@@ -57,7 +57,7 @@ export default function HomeCarousel({ filter } : any) {
                 <div className="text-center mt-4 font-noto">
                     <p className="text-white text-lg h-14 line-clamp-2">
                         {result.artist.split("(")[0]} - {result.title} 
-                        {result.edition ? <span>({result.edition})</span> : null}
+                        {result.edition ? <span> ({result.edition})</span> : null}
                     </p>
                     <div className="mt-4">
                         <p className="text-gray-400 text-base">

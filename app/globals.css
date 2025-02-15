@@ -35,14 +35,3 @@ body {
 .swiper-button-next:hover::after{
   color: #ff69b4;
 }
-
-@layer components {
-  .material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 500,
-    'GRAD' 0;
-    font-size: inherit;
-  }
-}
-
