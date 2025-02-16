@@ -14,7 +14,7 @@ export default async function Detail(props:any) {
     })
 
     return (
-        <div className="relative top-32 text-custom-white w-3/4 mx-auto"> 
+        <div className="relative top-32 pb-32 text-custom-white w-3/4 mx-auto"> 
             <div className="flex w-full justify-between mb-12">
                 <div className="w-[48%] mr-8 box-border">
                     <div className="relative w-full aspect-square">

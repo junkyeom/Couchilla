@@ -10,13 +10,16 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
+    "@auth/supabase-adapter": "^1.7.4",
     "@headlessui/react": "^2.2.0",
     "@prisma/client": "^6.3.1",
     "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.48.1",
     "aos": "^2.3.4",
+    "bcrypt": "^5.1.1",
     "bootstrap-icons": "^1.11.3",
     "next": "15.1.5",
+    "next-auth": "^4.24.11",
     "next-seo": "^6.6.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

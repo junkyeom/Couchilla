@@ -8,7 +8,7 @@ export default function Register() {
     let [password, setPassword] = useState<any>('')
 
     return (
-        <div className="relative top-32 w-3/4 mx-auto">
+        <div className="relative top-32 pb-32 w-3/4 mx-auto">
             <div>
                 <div className=" text-custom-pink text-xl font-bold">
                     회원가입

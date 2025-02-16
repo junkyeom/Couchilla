@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/navbar/page";
 import Footer from "@/components/footer/page";
+import { SessionProvider } from "next-auth/react";
 
 export const metadata: Metadata = {
   title: "코칠라 | COUCHILLA",
@@ -24,8 +25,10 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"></link>
       </head>
       <body className="bg-black">
-      <Navbar/>
-        <main className="pb-32 mb-16">{children}</main>
+        <Navbar/>
+        <main className="mb-32">
+          {children}
+        </main>
       <Footer/>
       </body>
     </html>

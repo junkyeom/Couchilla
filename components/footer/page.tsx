@@ -79,7 +79,7 @@ export default function Footer() {
                                 <a href="https://github.com/junkyeom" target="_blank" rel="noopener noreferrer" className="bi bi-github"></a>
                             </div>
                             <div className="text-3xl text-custom-pink">
-                                <a href="https://www.instagram.com/cjadoublem" target="_blank" rel="noopener noreferrer" className="bi bi-instagram"></a>
+                                <a href="https://www.instagram.com/freesqqq" target="_blank" rel="noopener noreferrer" className="bi bi-instagram"></a>
                             </div>
                         </div>
                     </div>

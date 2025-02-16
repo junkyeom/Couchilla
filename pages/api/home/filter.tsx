@@ -36,7 +36,6 @@ export default async function handler(req:NextApiRequest, res:NextApiResponse) {
                     type : "Goods"
                 }
             }) || []
-            console.log(data)
         }
         
         const normalizedData = data.map(item=>({

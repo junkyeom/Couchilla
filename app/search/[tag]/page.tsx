@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client"
+import { PrismaClient } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -21,7 +21,7 @@ export default async function Search({ params }: { params: { tag: string } }) {
 
     return (
         <>
-        <div className="relative top-32 w-3/4 mx-auto">
+        <div className="relative top-32 pb-32 w-3/4 mx-auto">
             <div className="text-white text-center mb-16 text-2xl">
                 <span className="text-custom-pink font-bold">{tag}</span>에 대한 검색결과 입니다.
             </div>
