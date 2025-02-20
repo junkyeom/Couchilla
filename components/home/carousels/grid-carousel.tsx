@@ -3,7 +3,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/grid';
-import { Grid, Navigation } from "swiper/modules";
+import { Autoplay, Grid, Navigation } from "swiper/modules";
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';

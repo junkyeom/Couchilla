@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import { Navigation, Autoplay } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function HomeCarousel({ filter } : any) {
 
@@ -32,12 +32,13 @@ export default function HomeCarousel({ filter } : any) {
     
   return (
     <Swiper
-      modules={[Navigation, Autoplay]}
+      key={filterVal ? filterVal.length : "loading"}
+      loop={true}
+      autoplay={{delay: 3000, disableOnInteraction: false }}
+      navigation
+      modules={[Autoplay, Navigation]}
       spaceBetween={60}
       slidesPerView={4} 
-      loop={true}
-      autoplay={{ delay: 3000 , disableOnInteraction: false }}
-      navigation
     >
         {
         filterVal && filterVal.length > 0 ? (filterVal.map((result:any)=>(
