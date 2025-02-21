@@ -13,7 +13,7 @@ export default async function Search({ params }: { params: { tag: string } }) {
             OR: [
                 { title: { contains: tag, mode: "insensitive" } }, 
                 { artist: { contains: tag, mode: "insensitive" } },
-                { type: { contains: tag, mode: "insensitive" } },
+                { type: { contains: tag, mode: "insensitive" } }, 
                 { tag: { contains: tag, mode: "insensitive" } }
             ]
         }

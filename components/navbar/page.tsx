@@ -4,23 +4,39 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation"; 
-import SearchBar from "./searchBar";
+import SearchBar from "./searchBar";    
+import { signIn, signOut } from "next-auth/react";
+import SessionBar from "./sessionBar";
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(true);
     const pathname = usePathname(); 
     const isHome = pathname === "/"; 
+    const [session, setSession] = useState('');
 
     useEffect(() => {
         if (!isHome) return; 
-
         const handleScroll = () => {
             setScrolled(window.scrollY < 450);
         };
-
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, [isHome]);
+
+    useEffect(()=>{
+        fetch('/api/auth/session',{
+            method : "GET"
+        })
+        .then(r=>r.json())
+        .then(r=>{
+            if(r) {
+                console.log(r)
+                setSession(r.user.name);
+            } else {
+                console.log('세션 없음')
+            }
+        })
+    },[])
 
     return (
         <div
@@ -38,8 +54,21 @@ export default function Navbar() {
             <div className="ml-auto flex items-center">
                 <SearchBar/>
             </div>
-            <div className="text-custom-pink font-anton text-xl ml-4">
-                <Link href="/register" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">REGISTER</Link>
+            <div className="flex items-center text-custom-pink font-anton text-xl ml-5">
+                {session.length>0 ? (
+                    <>
+                        <Link href="/mypage" className={`text-custom-pink ${ /[가-힣]/.test(session) && "font-noto font-bold mb-[2px]"} mr-4`}>
+                            <span><span className="bi bi-person mr-1"></span>{session}</span>
+                        </Link>
+                            <button onClick={()=>{ signOut() }} className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">LOGOUT</button>
+                    </>
+                ):( 
+                    <>
+                        <Link href="/register" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">REGISTER</Link>
+                        <button onClick={()=>{ signIn()}} className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">LOGIN</button>
+                    </>
+                )}
+                
             </div>
         </div>
     );

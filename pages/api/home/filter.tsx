@@ -1,15 +1,21 @@
 import { PrismaClient } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../auth/[...nextauth]";
 
-let prisma = new PrismaClient()
+let prisma = new PrismaClient() 
 
 export default async function handler(req:NextApiRequest, res:NextApiResponse) {
+    // let session = await getServerSession(req, res, authOptions);
+    // if(session) {
+    //     console.log(session)
+    // } else {
+    //     console.log("세션 없음")
+    // }
 
     if(req.method === "POST") {
         let data:any[] =[];
         let type = req.body?.type
-
-        console.log("타입 : "+type)
 
         if(type == "genre") {
             data = await prisma.card.findMany({
