@@ -21,14 +21,14 @@ export default async function Search({ params }: { params: { tag: string } }) {
 
     return (
         <>
-        <div className="relative top-32 pb-32 w-3/4 mx-auto">
+        <div className="relative top-32 pb-32 w-4/5 mx-auto">
             <div className="text-white text-center mb-16 text-2xl">
                 <span className="text-custom-pink font-bold">{tag}</span>에 대한 검색결과 입니다.
             </div>
             <div className="mb-4 text-white">
                 전체 <span className="text-custom-pink font-bold">{result.length}</span> 개
             </div>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-4 gap-6">
             {result && result.length > 0 ? result.map((a:any,i:number)=>(
                 <Link href={"/detail/"+a.id} key={i}>
                 <div className="w-full h-[425px]">

@@ -58,7 +58,7 @@ export default function Navbar() {
                 {session.length>0 ? (
                     <>
                         <Link href="/mypage" className={`text-custom-pink ${ /[가-힣]/.test(session) && "font-noto font-bold mb-[2px]"} mr-4`}>
-                            <span><span className="bi bi-person mr-1"></span>{session}</span>
+                            <span><span className="text-2xl bi bi-person mr-1"></span></span>
                         </Link>
                             <button onClick={()=>{ signOut() }} className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">LOGOUT</button>
                     </>
