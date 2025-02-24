@@ -31,5 +31,6 @@ model User {
   created_at DateTime @default(now()) @db.Timestamptz(6)
   name       String?
   email      String
-  password   String
+  password   String?
+  wish_list  String[]
 }

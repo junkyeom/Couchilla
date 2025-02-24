@@ -8,15 +8,15 @@ let prisma = new PrismaClient();
 export default async function handler(req:NextApiRequest, res:NextApiResponse) {
     if(req.method==="POST") {
         
-        const regEmail = /^[a-z]+[a-z0-9]{5,19}$/g;
+        const regEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
         const regPassword = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
 
         if(!regEmail.test(req.body.email)) {
-            res.status(500).json('잘못된 이메일 형식입니다.')
+            return res.status(500).json('잘못된 이메일 형식입니다.')
         }
 
         if(!regPassword.test(req.body.password)) {
-            res.status(500).json('잘못된 패스워드 형식입니다.')
+            return res.status(500).json('잘못된 패스워드 형식입니다.')
         }
 
         let result = req.body;

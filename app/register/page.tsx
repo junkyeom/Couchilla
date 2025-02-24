@@ -28,6 +28,7 @@ export default function SignupForm() {
             });
 
             const data = await response.json();
+            console.log(data)
 
             if (response.ok) {
                 // 성공 시 처리 (예: 로그인 페이지로 이동)
@@ -35,7 +36,7 @@ export default function SignupForm() {
                 // Redirect to login page or dashboard
             } else {
                 // 실패 시 에러 메시지 처리
-                setError(data?.message || '회원가입에 실패했습니다.');
+                setError(data || '회원가입에 실패했습니다.');
             }
         } catch (error) {
             setError('서버 오류');
@@ -81,8 +82,8 @@ export default function SignupForm() {
                                 placeholder="비밀번호를 입력하세요"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
-                                required
                             />
+                            <div className='mt-2 text-[12px] text-gray-400'>8-16자, 대소문자, 숫자, 특수문자 포함</div>
                         </div>
                         <div className="mt-4">
                             <button
