@@ -28,8 +28,8 @@ export const authOptions:NextAuthOptions= {
       async authorize(credentials) {
 
         if (!credentials?.email || !credentials?.password) {
-            console.log("이메일 또는 비밀번호가 제공되지 않았습니다.");
-            return null;
+          console.log('이메일과 비밀번호를 입력하세요.')
+          throw new Error("이메일과 비밀번호를 입력하세요.");
         }
           
         let user = await prisma.user.findFirst({
@@ -37,13 +37,13 @@ export const authOptions:NextAuthOptions= {
                 email : credentials?.email
             }})
         if (!user) {
-          console.log('해당 이메일은 없음');
-          return null
+          console.log('해당 이메일이 존재하지 않습니다.')
+          throw new Error("해당 이메일이 존재하지 않습니다.");
         }
         const pwcheck = await bcrypt.compare(credentials.password, user.password);
         if (!pwcheck) {
-          console.log('비번틀림');
-          return null
+          console.log('비밀번호가 올바르지 않습니다.')
+          throw new Error("비밀번호가 올바르지 않습니다.");
         }
 
         return {
@@ -84,6 +84,9 @@ export const authOptions:NextAuthOptions= {
     return session
     },
   },
+  pages: {
+    signIn: "/login"
+ },
   secret: process.env.AUTH_SECRET 
 };
 export default NextAuth(authOptions)

@@ -6,13 +6,15 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation"; 
 import SearchBar from "./searchBar";    
 import { signIn, signOut } from "next-auth/react";
-import SessionBar from "./sessionBar";
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(true);
     const pathname = usePathname(); 
     const isHome = pathname === "/"; 
-    const [session, setSession] = useState('');
+    const [session, setSession] = useState(''); 
+    let router = useRouter();
+
 
     useEffect(() => {
         if (!isHome) return; 
@@ -36,7 +38,7 @@ export default function Navbar() {
                 console.log('세션 없음')
             }
         })
-    },[])
+    })
 
     return (
         <div
@@ -60,12 +62,14 @@ export default function Navbar() {
                         <Link href="/mypage" className={`text-custom-pink ${ /[가-힣]/.test(session) && "font-noto font-bold mb-[2px]"} mr-4`}>
                             <span><span className="text-2xl bi bi-person mr-1"></span></span>
                         </Link>
-                            <button onClick={()=>{ signOut() }} className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">LOGOUT</button>
+                            <button onClick={async()=>{
+                                await signOut({ redirect: false });
+                                window.location.reload()
+                            }} className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">LOGOUT</button>
                     </>
                 ):( 
                     <>
-                        <Link href="/register" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">REGISTER</Link>
-                        <button onClick={()=>{ signIn()}} className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">LOGIN</button>
+                        <Link href="/login" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">LOGIN</Link>
                     </>
                 )}
                 

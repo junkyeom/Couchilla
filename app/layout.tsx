@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/navbar/page";
 import Footer from "@/components/footer/page";
-import { SessionProvider } from "next-auth/react";
 
 export const metadata: Metadata = {
   title: "코칠라 | COUCHILLA",
@@ -29,7 +28,7 @@ export default function RootLayout({
         <main className="mb-32">
           {children}
         </main>
-      <Footer/>
+        <Footer/>
       </body>
     </html>
   );
