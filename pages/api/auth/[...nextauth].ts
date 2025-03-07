@@ -68,7 +68,9 @@ export const authOptions:NextAuthOptions = {
           console.log('해당 이메일이 존재하지 않습니다.');
           throw new Error("해당 이메일이 존재하지 않습니다.");
         }
-
+        if (!user.password) {
+          throw new Error("해당 계정은 비밀번호가 설정되어 있지 않습니다.");
+        }
         const pwcheck = await bcrypt.compare(credentials.password, user.password);
         if (!pwcheck) {
           console.log('비밀번호가 올바르지 않습니다.');

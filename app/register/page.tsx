@@ -93,12 +93,11 @@ export default function SignupForm() {
                                 회원가입
                             </button>
                             <button
-                                className="text-white bg-custom-pink p-2 mt-4"
+                                className="text-custom-pink mt-5 text-2xl bi bi-google"
                                 onClick={() => {
                                     signIn('google');
                                 }}
                             >
-                                구글
                             </button>
                         </div>
                     </form>

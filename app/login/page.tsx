@@ -75,6 +75,15 @@ export default function LogIn() {
                                     로그인
                                 </button>
                             </div>
+                            <div className="mb-4">
+                                <button
+                                    className="text-custom-pink text-2xl bi bi-google"
+                                    onClick={() => {
+                                        signIn('google');
+                                    }}
+                                >
+                                </button>
+                            </div>
                             <div className="text-custom-pink text-sm">
                                 <Link href='/register'>회원가입</Link>
                             </div>
