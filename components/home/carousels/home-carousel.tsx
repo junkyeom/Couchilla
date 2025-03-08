@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 
 export default function HomeCarousel({ filter } : any) {
 
-    let [filterVal, setfilterVal] = useState<any>(null);
+    let [filterVal, setFilterVal] = useState<any>(null);
 
     useEffect(()=>{
         fetch('/api/home/filter',{
@@ -25,7 +25,7 @@ export default function HomeCarousel({ filter } : any) {
         .then(r=>r.json())
         .then(r=>{
             if(r) {
-                setfilterVal(r);
+                setFilterVal(r);
             }
         })
     },[])
@@ -33,7 +33,7 @@ export default function HomeCarousel({ filter } : any) {
   return (
     <Swiper
       key={filterVal ? filterVal.length : "loading"}
-      loop={true}
+      loop={filterVal?.length > 3}
       autoplay={{delay: 3000, disableOnInteraction: false }}
       navigation
       modules={[Autoplay, Navigation]}
@@ -51,6 +51,7 @@ export default function HomeCarousel({ filter } : any) {
                             src={result.image_url} 
                             alt={result.title}
                             fill
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                             className="transition-transform duration-100 transform group-hover:scale-110 rounded-lg"
                         />
                     </div>

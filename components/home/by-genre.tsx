@@ -5,203 +5,37 @@ export default function ByGenre() {
 
     return(
         <div className="grid grid-cols-7 grid-rows-2 gap-6">
-            <Link href="/search/인디">
-            <div>
-                <Image
-                    src="/genre/team_baby.jpg"
-                    alt="Example"
-                    width={500}
-                    height={500}
-                    className="object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-400"
-                />
-                <div className="text-sm text-gray-400 text-center mt-2">
-                    인디
-                </div>
-            </div>
-            </Link>
-            <Link href="/search/알앤비">
-            <div>
-                <Image
-                    src="/genre/oohyo.jpg"
-                    alt="Example"
-                    width={500}
-                    height={500}
-                    className="object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-400"
-                />
-                <div className="text-sm text-gray-400 text-center mt-2">
-                    알앤비
-                </div>
-            </div>
-            </Link>
-            <Link href="/search/rnb">
-            <div>
-                <Image
-                    src="/genre/sos_genre.png"
-                    alt="Example"
-                    width={500}
-                    height={500}
-                    className="object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-400"
-                />
-                <div className="text-sm text-gray-400 text-center mt-2">
-                    R&B/Soul
-                </div>
-            </div>
-            </Link>
-            <Link href="/search/팝댄스">
-            <div>
-                <Image
-                    src="/genre/get_up.png"
-                    alt="Example"
-                    width={500}
-                    height={500}
-                    className="object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-400"
-                />
-                <div className="text-sm text-gray-400 text-center mt-2">
-                    팝/댄스
-                </div>
-            </div>
-            </Link>
-            <Link href="/search/pop">
-            <div>
-                <Image
-                    src="/genre/divide.png"
-                    alt="Example"
-                    width={500}
-                    height={500}
-                    className="object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-400"
-                />
-                <div className="text-sm text-gray-400 text-center mt-2">
-                    POP
-                </div>
-            </div>
-            </Link>
-            <Link href="/search/록메탈">
-            <div>
-                <Image
-                    src="/genre/no_pain.png"
-                    alt="Example"
-                    width={500}
-                    height={500}
-                    className="object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-400"
-                />
-                <div className="text-sm text-gray-400 text-center mt-2">
-                    록/메탈
-                </div>
-            </div>
-            </Link>
-            <Link href="/search/rockmetal">
-            <div>
-                <Image
-                    src="/genre/nevermind.png"
-                    alt="Example"
-                    width={500}
-                    height={500}
-                    className="object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-400"
-                />
-                <div className="text-sm text-gray-400 text-center mt-2">
-                    Rock/Metal
-                </div>
-            </div>
-            </Link>
-            <Link href="/search/발라드">
-            <div>
-                <Image
-                    src="/genre/love_yerin.png"
-                    alt="Example"
-                    width={500}
-                    height={500}
-                    className="object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-400"
-                />
-                <div className="text-sm text-gray-400 text-center mt-2">
-                    발라드
-                </div>
-            </div>
-            </Link>
-            <Link href="/search/포크%2F어쿠스틱">
-            <div>
-                <Image
-                    src="/genre/love_lee.png"
-                    alt="Example"
-                    width={500}
-                    height={500}
-                    className="object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-400"
-                />
-                <div className="text-sm text-gray-400 text-center mt-2">
-                    포크/어쿠스틱
-                </div>
-            </div>
-            </Link>
-            <Link href="/search/재즈%2F클래식">
-            <div>
-                <Image
-                    src="/genre/chopin.jpg"
-                    alt="Example"
-                    width={500}
-                    height={500}
-                    className="object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-400"
-                />
-                <div className="text-sm text-gray-400 text-center mt-2">
-                    재즈/클래식
-                </div>
-            </div>
-            </Link>
-            <Link href="/search/힙합">
-            <div>
-                <Image
-                    src="/genre/freethebeast.png"
-                    alt="Example"
-                    width={500}
-                    height={500}
-                    className="object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-400"
-                />
-                <div className="text-sm text-gray-400 text-center mt-2">
-                    힙합
-                </div>
-            </div>
-            </Link>
-            <Link href="/search/hiphop">
-            <div>
-                <Image
-                    src="/genre/mbdtf.jpg"
-                    alt="Example"
-                    width={500}
-                    height={500}
-                    className="object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-400"
-                />
-                <div className="text-sm text-gray-400 text-center mt-2">
-                    Hip-Hop
-                </div>
-            </div>
-            </Link>
-            <Link href="/search/emo">
-            <div>
-                <Image
-                    src="/genre/keung.jpg"
-                    alt="Example"
-                    width={500}
-                    height={500}
-                    className="object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-400"
-                />
-                <div className="text-sm text-gray-400 text-center mt-2">
-                    EMO
-                </div>
-            </div>
-            </Link>
-            <Link href="/search/jp">
-            <div>
-                <Image
-                    src="/genre/szme.png"
-                    alt="Example"
-                    width={500}
-                    height={500}
-                    className="object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-400"
-                />
-                <div className="text-sm text-gray-400 text-center mt-2">
-                    J-Pop
-                </div>
-            </div>
-            </Link>
-        </div>
+  {[
+    { href: "/search/인디", src: "/genre/team_baby.jpg", label: "인디" },
+    { href: "/search/알앤비", src: "/genre/oohyo.jpg", label: "알앤비" },
+    { href: "/search/rnb", src: "/genre/sos_genre.png", label: "R&B/Soul" },
+    { href: "/search/팝댄스", src: "/genre/get_up.png", label: "팝/댄스" },
+    { href: "/search/pop", src: "/genre/divide.png", label: "POP" },
+    { href: "/search/록메탈", src: "/genre/no_pain.png", label: "록/메탈" },
+    { href: "/search/rockmetal", src: "/genre/nevermind.png", label: "Rock/Metal" },
+    { href: "/search/발라드", src: "/genre/love_yerin.png", label: "발라드" },
+    { href: "/search/포크%2F어쿠스틱", src: "/genre/love_lee.png", label: "포크/어쿠스틱" },
+    { href: "/search/재즈%2F클래식", src: "/genre/chopin.jpg", label: "재즈/클래식" },
+    { href: "/search/힙합", src: "/genre/freethebeast.png", label: "힙합" },
+    { href: "/search/hiphop", src: "/genre/mbdtf.jpg", label: "Hip-Hop" },
+    { href: "/search/emo", src: "/genre/keung.jpg", label: "EMO" },
+    { href: "/search/jp", src: "/genre/szme.png", label: "J-Pop" },
+  ].map(({ href, src, label }) => (
+    <Link key={href} href={href}>
+      <div>
+        <Image
+          src={src}
+          alt={label}
+          width={500}
+          height={500}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover rounded-full grayscale hover:grayscale-0 transition-all duration-400"
+        />
+        <div className="text-sm text-gray-400 text-center mt-2">{label}</div>
+      </div>
+    </Link>
+  ))}
+</div>
     )
 }
 

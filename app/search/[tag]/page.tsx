@@ -4,7 +4,11 @@ import Link from "next/link";
 
 let prisma = new PrismaClient();
 
-export default async function Search({ params }: { params: { tag: string } }) {
+interface SearchProps {
+    params: { tag: string };
+}
+
+export default async function Search({ params }: SearchProps) {
 
     let tag = decodeURIComponent(params.tag);
 

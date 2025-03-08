@@ -10,7 +10,7 @@ import { useState, useEffect } from 'react';
 
 export default function GridCarousel({ filter } :any) {
 
-    let [filterVal, setfilterVal] = useState<any>(null);
+    let [filterVal, setFilterVal] = useState<any>(null);
 
     useEffect(()=>{
         fetch('/api/home/filter',{
@@ -24,26 +24,28 @@ export default function GridCarousel({ filter } :any) {
         .then(r=>r.json())
         .then(r=>{
             if(r) {
-                setfilterVal(r);
+                setFilterVal(r);
             }
         })
     },[])
 
     return (
       <>
+        { filterVal && filterVal.length > 0 ? (
         <Swiper
           modules={[Grid, Navigation]}
           slidesPerView={3}
-          grid={{
-            rows: 2,
-            fill : 'row'
+          breakpoints={{
+            640: { slidesPerView: 1, grid: { rows: 2, fill: 'row' } },
+            768: { slidesPerView: 2, grid: { rows: 2, fill: 'row' } },
+            1024: { slidesPerView: 3, grid: { rows: 2, fill: 'row' } },
           }}
           spaceBetween={30}
           navigation
           className='mx-auto w-full h-full'
         >
-          {
-        filterVal && filterVal.length > 0 ? (filterVal.map((result:any)=>(
+        {
+        filterVal.map((result:any, index:number)=>(
             <SwiperSlide key={result.id}>
             <Link href={"/detail/"+result.id}>
             <div className='flex'>
@@ -53,7 +55,9 @@ export default function GridCarousel({ filter } :any) {
                             src={result.image_url} 
                             alt={result.title}
                             fill
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                             className="transition-transform duration-100 transform group-hover:scale-110 rounded-lg"
+                            priority={index===0}
                         />
                     </div>
                 </div>
@@ -75,8 +79,13 @@ export default function GridCarousel({ filter } :any) {
             </Link>
           </SwiperSlide>
         )) 
-    ): (<div className="text-white text-center text-lg">굿즈를 가져오는 중입니다...</div>)}
-        </Swiper>
+    }
+        </Swiper>) : (<div>잠시만요</div>)}
       </>
     );
   }
+
+
+//   filterVal && filterVal.length > 0 ? 
+
+{/* <div className="text-white text-center text-lg">굿즈를 가져오는 중입니다...</div> */}

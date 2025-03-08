@@ -32,10 +32,7 @@ export default function Navbar() {
         .then(r=>r.json())
         .then(r=>{
             if(r) {
-                console.log(r)
                 setSession(r.user.name);
-            } else {
-                console.log('세션 없음')
             }
         })
     })
@@ -46,7 +43,15 @@ export default function Navbar() {
             ${isHome&&scrolled ? "bg-transparent" : "bg-black"} `}
         >
             <div className="w-[160px] h-[64px] relative mr-10">
-                <Link href="/"><Image src="/logo.png" alt="couchilla" fill /></Link>
+            <Link href="/">
+                <Image
+                    src="/logo.png"
+                    alt="couchilla"
+                    width={160} // 명시적으로 지정
+                    height={64} // 명시적으로 지정
+                    priority // 로고는 항상 먼저 로딩되도록 설정
+                />
+            </Link>
             </div>
             <div className="text-custom-pink font-anton text-xl">
                 <Link href="/search/lp" className="mr-5 hover:text-custom-dark-pink transition-colors duration-300 ease-in-out">VINYL</Link>
