@@ -4,9 +4,11 @@ import Link from "next/link";
 
 let prisma = new PrismaClient();
 
-export default async function Search({ params }: { params: { tag: string } }) {
+type PageParams = Promise<{tag : string}>
+
+export default async function Search({ params }: { params: PageParams }) {
     // params가 비동기적으로 처리되도록 수정
-    const { tag } = params;
+    const { tag } = await params;
 
     // URL 인코딩 처리
     let tagDecoded = decodeURIComponent(tag);
