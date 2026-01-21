@@ -42,6 +42,11 @@ export default async function Mypage() {
                             {session?.user?.email}
                         </div>
                     </div>
+                    <div className="w-full mt-8">
+                        <div className="text-custom-pink py-4 text-xl">
+                            위시리스트
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -4,9 +4,15 @@ import Recommand from "./recommand"
 
 let prisma = new PrismaClient()
 
-export default async function Detail(props:any) {
+type Props = {
+  params: {
+    id: string
+  }
+}
 
-    let id = props.params.id
+export default async function Detail({params}: Props) {
+
+    let id = params.id
     let result = await prisma.card.findUnique({
         where : {
             id : BigInt(id)
